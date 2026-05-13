@@ -1,0 +1,91 @@
+import java.util.*;
+
+class Library {
+
+    static int totalBooks = 0;
+
+    String bookName;
+    boolean issued = false;
+
+    // Constructor
+    Library(String name) {
+
+        bookName = name;
+
+        totalBooks++;
+    }
+
+    // Display book details
+    void displayBook() {
+
+        System.out.println("Book Name: " + bookName);
+
+        if (issued) {
+
+            System.out.println("Status: Issued");
+        }
+
+        else {
+
+            System.out.println("Status: Available");
+        }
+    }
+
+    // Issue book
+    void issueBook() {
+
+        if (!issued) {
+
+            issued = true;
+
+            System.out.println(bookName + " issued successfully");
+        }
+
+        else {
+
+            System.out.println(bookName + " already issued");
+        }
+    }
+
+    // Return book
+    void returnBook() {
+
+        if (issued) {
+
+            issued = false;
+
+            System.out.println(bookName + " returned successfully");
+        }
+
+        else {
+
+            System.out.println(bookName + " was not issued");
+        }
+    }
+
+    // Static method
+    static void totalBookCount() {
+
+        System.out.println("Total Books: " + totalBooks);
+    }
+}
+
+public class LibraryManagement {
+
+    public static void main(String[] args) {
+
+        Library b1 = new Library("Java");
+
+        Library b2 = new Library("Python");
+
+        b1.displayBook();
+
+        b1.issueBook();
+
+        b1.displayBook();
+
+        b1.returnBook();
+
+        Library.totalBookCount();
+    }
+}

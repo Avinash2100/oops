@@ -19,3 +19,7 @@ VALUES
 ('Priya', 'HR', 32000);
 
 SELECT * FROM Employee;
+
+
+javac -cp ".;mysql-connector-j-9.6.0.jar" EmpCRUD.java
+java -cp ".;mysql-connector-j-9.6.0.jar" EmpCRUD

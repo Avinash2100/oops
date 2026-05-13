@@ -1,0 +1,66 @@
+import java.util.*;
+
+public class ShoppingSystem {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        double total = 0;
+
+        try {
+
+            System.out.print("Enter number of items: ");
+
+            int n = Integer.parseInt(sc.nextLine());
+
+            for (int i = 1; i <= n; i++) {
+
+                System.out.print("Enter item price: ");
+
+                double price = Double.parseDouble(sc.nextLine());
+
+                if (price < 0) {
+
+                    throw new ArithmeticException("Invalid item price");
+                }
+
+                total = total + price;
+            }
+
+            System.out.println("Total Price: " + total);
+
+            System.out.print("Enter payment amount: ");
+
+            double payment = Double.parseDouble(sc.nextLine());
+
+            if (payment < total) {
+
+                throw new ArithmeticException("Insufficient payment");
+            }
+
+            double balance = payment - total;
+
+            System.out.println("Payment Successful");
+
+            System.out.println("Balance Amount: " + balance);
+        }
+
+        catch (NumberFormatException e) {
+
+            System.out.println("Invalid number entered");
+        }
+
+        catch (ArithmeticException e) {
+
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        finally {
+
+            System.out.println("Thank you for shopping");
+        }
+
+        sc.close();
+    }
+}

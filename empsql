@@ -1,0 +1,25 @@
+CREATE DATABASE emp;
+
+USE emp;
+
+CREATE TABLE Employee (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    position VARCHAR(50),
+    salary INT
+);
+
+INSERT INTO Employee (name, position, salary)
+
+VALUES
+('Rahul', 'Developer', 40000),
+('Sneha', 'Designer', 35000),
+('Amit', 'Tester', 30000),
+('Priya', 'HR', 32000);
+
+SELECT * FROM Employee;
+
+
+javac -cp ".;mysql-connector-j-9.6.0.jar" EmpCRUD.java
+java -cp ".;mysql-connector-j-9.6.0.jar" EmpCRUD

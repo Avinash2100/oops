@@ -1,4 +1,4 @@
-Employee Java Code :
+student Java Code :
 import java.sql.*;
 public class StudentCRUD {
 public static void main(String[] args) {

@@ -16,7 +16,7 @@ class A {
             System.out.println("1: Withdrawal");
             System.out.println("2: Deposit");
             System.out.println("3: Check Balance");
-            System.out.println("4: Exit");
+            System.out.println("4: Exit"); 
 
             ch = sc.nextInt();
 

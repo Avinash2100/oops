@@ -1,10 +1,10 @@
-interface Student {
+interface Students {
 
     void display();
 }
 
 // Science Student Class
-class ScienceStudent implements Student {
+class ScienceStudent implements Students {
 
     public void display() {
 
@@ -13,7 +13,7 @@ class ScienceStudent implements Student {
 }
 
 // Commerce Student Class
-class CommerceStudent implements Student {
+class CommerceStudent implements Students {
 
     public void display() {
 
@@ -25,7 +25,7 @@ public class StudentInterface {
 
     public static void main(String[] args) {
 
-        Student s;
+        Students s;
 
         s = new ScienceStudent();
 

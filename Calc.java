@@ -1,54 +1,57 @@
 import java.util.*;
-public class main {
+public class Calc {
     public static void main(String args[]){
         int ch;
         int a,b,result;
         Scanner sc = new Scanner(System.in);
         do {
-            System.out.println("enter you choice ");
+
+            System.out.println("");
+            System.out.println("   CALCULATOR   ");
             System.out.println("1 Addition ");
             System.out.println("2 sub ");
             System.out.println("3 mul  ");
             System.out.println("4 division");
             System.out.println("5 exit ");
+            System.out.print("Enter you choice - ");
             
             ch=sc.nextInt();
             
             switch(ch){
                 case 1:
-                      System.out.println("Enter value of a ");
+                      System.out.print("Enter value of a -");
                       a = sc.nextInt();
-                       System.out.println("Enter value of b ");
+                       System.out.print("Enter value of b -");
                       b = sc.nextInt();
                       result = a+b;
-                       System.out.println("result " + result); 
+                       System.out.println("result: " + result); 
                        break;
                        
                 case 2:
-                      System.out.println("Enter value of a ");
+                      System.out.print("Enter value of a- ");
                       a = sc.nextInt();
-                       System.out.println("Enter value of b ");
+                       System.out.print("Enter value of b- ");
                       b =sc.nextInt();
                       result = a-b;
-                       System.out.println("result " + result); 
+                       System.out.println("result: " + result); 
                        break; 
                 case 3:
-                      System.out.println("Enter value of a ");
+                      System.out.print("Enter value of a ");
                       a = sc.nextInt();
-                       System.out.println("Enter value of b ");
+                       System.out.print("Enter value of b ");
                       b = sc.nextInt();
                       result = a*b;
-                       System.out.println("result " + result); 
+                       System.out.println("result: " + result); 
                        break;
                        
                 case 4:
                     try{
-                      System.out.println("Enter value of a ");
+                      System.out.print("Enter value of a -");
                       a = sc.nextInt();
-                       System.out.println("Enter value of b ");
+                       System.out.print("Enter value of b -");
                       b = sc.nextInt();
                       result = a/b;
-                       System.out.println("result " + result); 
+                       System.out.println("result: " + result); 
                 
                     }catch(ArithmeticException e){
                         System.out.println("Division by zero is not allowed");
@@ -64,9 +67,11 @@ public class main {
             }
 
         } while (ch != 5);
+
+        sc.close(); // Close the Scanner to fix the resource leak
     }
 }
 
 
-javac StudentInterface.java
-java StudentInterface
+//javac StudentInterface.java
+//java StudentInterface

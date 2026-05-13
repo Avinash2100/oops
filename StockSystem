@@ -1,0 +1,62 @@
+class StockFetch extends Thread {
+
+    int stockPrice;
+
+    public void run() {
+
+        try {
+
+            System.out.println("Fetching stock price...");
+
+            Thread.sleep(2000);
+
+            stockPrice = 500;
+
+            System.out.println("Stock price fetched");
+        }
+
+        catch (Exception e) {
+
+            System.out.println(e);
+        }
+    }
+}
+
+class StockDisplay extends Thread {
+
+    StockFetch sf;
+
+    StockDisplay(StockFetch sf) {
+
+        this.sf = sf;
+    }
+
+    public void run() {
+
+        try {
+
+            sf.join();
+
+            System.out.println("Displaying Stock Price: " + sf.stockPrice);
+        }
+
+        catch (Exception e) {
+
+            System.out.println(e);
+        }
+    }
+}
+
+public class StockSystem {
+
+    public static void main(String[] args) {
+
+        StockFetch sf = new StockFetch();
+
+        StockDisplay sd = new StockDisplay(sf);
+
+        sf.start();
+
+        sd.start();
+    }
+}

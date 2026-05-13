@@ -66,3 +66,7 @@ public class main {
         } while (ch != 5);
     }
 }
+
+
+javac StudentInterface.java
+java StudentInterface

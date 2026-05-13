@@ -1,0 +1,38 @@
+interface Student {
+
+    void display();
+}
+
+// Science Student Class
+class ScienceStudent implements Student {
+
+    public void display() {
+
+        System.out.println("Science Student Marks: 85");
+    }
+}
+
+// Commerce Student Class
+class CommerceStudent implements Student {
+
+    public void display() {
+
+        System.out.println("Commerce Student Marks: 78");
+    }
+}
+
+public class StudentInterface {
+
+    public static void main(String[] args) {
+
+        Student s;
+
+        s = new ScienceStudent();
+
+        s.display();
+
+        s = new CommerceStudent();
+
+        s.display();
+    }
+}

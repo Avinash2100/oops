@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+class Parent {
+    int num;
+
+    void takeInput() {
+        System.out.print("Enter an integer: ");
+        Scanner sc = new Scanner(System.in);
+        num = sc.nextInt();
+    }
+
+    void showmessage() {
+        System.out.println("This is the Parent class method.");
+    }
+}
+
+class Child extends Parent {
+    void square() {
+        int sq = num * num;
+        System.out.println("Square of " + num + " = " + sq);
+    }
+
+    void display() {
+        System.out.println("This is the Child class method.");
+    }
+}
+
+public class SingleInheritance {
+    public static void main(String[] args) {
+        Child obj = new Child();
+        obj.takeInput();
+        obj.showmessage();
+        obj.square();
+        obj.display();
+    }
+}

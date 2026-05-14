@@ -1,125 +1,44 @@
 import java.util.*;
-
-class A {
-
-    void atm_operation() {
-
-        int amt = 5000;
-        int wamt, damt;
-        int ch;
-
+class Demo{
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-
-        do {
-
-            System.out.println("\nChoose the following option:");
-            System.out.println("1: Withdrawal");
-            System.out.println("2: Deposit");
-            System.out.println("3: Check Balance");
-            System.out.println("4: Exit"); 
-
-            ch = sc.nextInt();
-
-            switch (ch) {
-
+        int bal=45000,dep,with,ch;
+        try{
+        do{
+            System.out.println("Enter one of the given options");
+            System.out.println("1.Withdrawal");
+            System.out.println("2.Deposit");
+            System.out.println("3.Display Balance");
+            System.out.println("enter your choice:");
+            ch=sc.nextInt();
+            switch(ch){
                 case 1:
-
-                    try {
-
-                        System.out.println("Enter the withdrawal amount:");
-
-                        wamt = sc.nextInt();
-
-                        if (wamt <= 0) {
-
-                            throw new IllegalArgumentException("Invalid amount");
-                        }
-
-                        if (wamt > amt) {
-
-                            throw new ArithmeticException("Insufficient Balance");
-                        }
-
-                        amt = amt - wamt;
-
-                        System.out.println("Withdrawal successful");
+                    System.out.println("Enter amount to withdraw:");
+                    with = sc.nextInt();
+                    if(with>bal)
+                        System.out.println("Insufficient Balance");
+                    else{
+                        bal=bal-with;
+                        System.out.println("Amount after Withdrawal: "+bal);
                     }
-
-                    catch (InputMismatchException e) {
-
-                        System.out.println("Please enter a valid number");
-
-                        sc.next();
-                    }
-
-                    catch (ArithmeticException | IllegalArgumentException e) {
-
-                        System.out.println("Error: " + e.getMessage());
-                    }
-
                     break;
-
                 case 2:
-
-                    try {
-
-                        System.out.println("Enter the deposit amount:");
-
-                        damt = sc.nextInt();
-
-                        if (damt <= 0) {
-
-                            throw new IllegalArgumentException("Invalid deposit amount");
-                        }
-
-                        amt = amt + damt;
-
-                        System.out.println("Deposit successful");
-                    }
-
-                    catch (InputMismatchException e) {
-
-                        System.out.println("Please enter a valid number");
-
-                        sc.next();
-                    }
-
-                    catch (IllegalArgumentException e) {
-
-                        System.out.println("Error: " + e.getMessage());
-                    }
-
+                    System.out.println("Enter amount to deposit:");
+                    dep=sc.nextInt();
+                    bal+=dep;
+                    System.out.println("Balance after deposit: "+bal);
                     break;
-
                 case 3:
-
-                    System.out.println("Available Balance: " + amt);
-
+                    System.out.println("Your balance: "+bal);
                     break;
-
-                case 4:
-
-                    System.out.println("Thank you for using ATM");
-
-                    break;
-
                 default:
-
-                    System.out.println("Invalid choice. Please select again.");
+                    System.out.println("Enter invalid choice");
+                    break;
             }
-
-        } while (ch != 4);
-
-        sc.close();
-    }
-}
-
-public class ATM {
-
-    public static void main(String[] args) {
-
-        A obj = new A();
-
-        obj.atm_operation();
+        }while(ch!=4);
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 }

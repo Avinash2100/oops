@@ -1,52 +1,41 @@
-import java.util.Scanner;
+
+import java.util.*;
 
 class MathOperation {
 
+    // Power method for int
     static int power(int a, int b) {
 
-        return (int) Math.pow(a, b);
+        return (int)Math.pow(a, b);
     }
+
+    // Power method for double
     static double power(double a, double b) {
 
         return Math.pow(a, b);
     }
+
+    // Absolute method for int
     static int abs(int a) {
 
         return Math.abs(a);
     }
 
+    // Absolute method for double
     static double abs(double a) {
 
         return Math.abs(a);
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        System.out.println("--- Power (int) ---");
-        System.out.print("Enter base (int): ");
-        int baseInt = sc.nextInt();
-        System.out.print("Enter exponent (int): ");
-        int expInt = sc.nextInt();
-        System.out.println("Result: " + power(baseInt, expInt) + "\n");
+        // Calling methods directly
+        System.out.println("Power (int): " + power(2, 3));
 
-        System.out.println("--- Power (double) ---");
-        System.out.print("Enter base (double): ");
-        double baseDouble = sc.nextDouble();
-        System.out.print("Enter exponent (double): ");
-        double expDouble = sc.nextDouble();
-        System.out.println("Result: " + power(baseDouble, expDouble) + "\n");
+        System.out.println("Power (double): " + power(2.5, 2.0));
 
-        System.out.println("--- Absolute (int) ---");
-        System.out.print("Enter an integer: ");
-        int absInt = sc.nextInt();
-        System.out.println("Result: " + abs(absInt) + "\n");
+        System.out.println("Absolute (int): " + abs(-10));
 
-        System.out.println("--- Absolute (double) ---");
-        System.out.print("Enter a double: ");
-        double absDouble = sc.nextDouble();
-        System.out.println("Result: " + abs(absDouble));
-
-        sc.close();
+        System.out.println("Absolute (double): " + abs(-15.5));
     }
 }
